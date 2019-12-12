@@ -28,7 +28,7 @@ ustc)
 ;;
 esac
 
-if [ -f /etc/apt/sources.list ];
+if [ ! -f /etc/apt/sources.list.back ];
 then
 	sudo mv /etc/apt/sources.list /etc/apt/sources.list.back
 else
@@ -51,5 +51,5 @@ do
 done
 
 sudo mv sources.list /etc/apt/sources.list
-sudo apt update
+sudo apt update --fix-missing
 exit 0
